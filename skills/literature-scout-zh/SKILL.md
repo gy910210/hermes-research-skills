@@ -51,15 +51,14 @@ description: "文献与证据扩展器：基于 context_brief 或主题问题检
    - `support / contradiction / open gap`
 4. 去重后按方向聚类，而不是只给一长串论文。
 5. 优先输出“为什么值得继续读”的队列：哪些能直接改主稿，哪些更适合作为旁证或潜力方向。
-6. 若主题属于电商搜推购物决策类，加载 `../agentic-commerce-research-profile-zh/references/domain-profile-agentic-commerce.md` 对齐领域 taxonomy 与 benchmark 检查项。
-7. 如果 `search_mode=diff_against_catalog`，额外读取现有 `awesome-*.md` 或 curated repo 页面，识别：
+6. 如果 `search_mode=diff_against_catalog`，额外读取现有 `awesome-*.md` 或 curated repo 页面，识别：
    - 支持文档里有但 catalog 里没有
    - 同一论文是否已被重复收录
    - 哪些新条目只够做 watchlist
-8. 如果 `search_mode=institution_line`，优先按机构/平台/团队聚类输出，而不是只按技术树输出。
-9. 如果 `search_mode=citation_neighborhood`，优先围绕核心种子论文的引用邻域和同机构家族继续扩展。
-10. 如果 `search_mode=bridge_line`，优先找“概念桥接”论文：它们不一定是主线核心论文，但能解释两个研究家族之间的结构关系。
-11. 如果 `search_mode=artifact_hunt`，优先寻找附录、prompt template、训练表格、数据构造细节、ratio 披露和公开示例，而不只找新论文标题。
+7. 如果 `search_mode=institution_line`，优先按机构/平台/团队聚类输出，而不是只按技术树输出。
+8. 如果 `search_mode=citation_neighborhood`，优先围绕核心种子论文的引用邻域和同机构家族继续扩展。
+9. 如果 `search_mode=bridge_line`，优先找“概念桥接”论文：它们不一定是主线核心论文，但能解释两个研究家族之间的结构关系。
+10. 如果 `search_mode=artifact_hunt`，优先寻找附录、prompt template、训练表格、数据构造细节、ratio 披露和公开示例，而不只找新论文标题。
 
 ## 守护
 - 不把搜索结果列表冒充成综合结论。

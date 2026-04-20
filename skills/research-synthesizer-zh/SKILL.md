@@ -49,19 +49,18 @@ description: "跨文献综合器：把 evidence_map、paper_notes 与 evidence_a
    - 关键矛盾点在哪里？
    - 哪些内容已经足够成熟，可以并回主稿？
    - 哪些内容更适合单独保留为专题或建议？
-5. 需要领域模板时，加载 `../agentic-commerce-research-profile-zh/references/domain-profile-agentic-commerce.md`。
-6. 如果 `target_output_type=awesome_page`，优先组织成：
+5. 如果 `target_output_type=awesome_page`，优先组织成：
    - 阅读地图
    - 问题地图
    - 方向地图
    - 高价值新增条目
-7. 如果 `target_output_type=institution_roadmap` 或 `route_family_comparison`，优先组织成：
+6. 如果 `target_output_type=institution_roadmap` 或 `route_family_comparison`，优先组织成：
    - 机构线/平台线
    - 业务表面
    - 技术重心
    - 最强证据
    - 当前短板
-8. 如果 `target_output_type=critical_iteration_report`，优先保留轮次递进，而不是压平写成普通综述。
+7. 如果 `target_output_type=critical_iteration_report`，优先保留轮次递进，而不是压平写成普通综述。
 
 ## 守护
 - 章节之间要有过渡，不要把增量稿直接拼起来。

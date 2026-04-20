@@ -37,7 +37,6 @@
 - `paper-explorer-brief-zh`
 - `paper-collab-coordinator-zh`
 - `awesome-repo-maintainer-zh`
-- `agentic-commerce-research-profile-zh`
 
 ## 这一版的重点
 

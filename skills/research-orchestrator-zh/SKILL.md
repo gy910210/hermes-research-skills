@@ -37,7 +37,6 @@ description: "研究总编排入口：为新方向启动、已有报告增量扩
 - `existing_files[]`: 已有报告、笔记、PDF、Markdown、表格或索引（可为空）
 - `time_window`: 年份或时间范围（可选）
 - `deliverable_type`: `"增量稿"|"专题稿"|"方向比较稿"|"双视角稿"|"成熟主稿"|"图示增强"|"awesome_page"|"institution_roadmap"|"critical_iteration_report"|"route_family_comparison"`
-- `domain_profile`: 默认为自动判断；电商搜推购物决策类优先加载 `agentic-commerce-research-profile-zh`
 
 ## 输出
 - `research_agenda`
@@ -76,15 +75,14 @@ description: "研究总编排入口：为新方向启动、已有报告增量扩
 4. 依据 [artifact-contracts.md](references/artifact-contracts.md) 约束每个子技能的输入输出。
 5. 依据 [evidence-discipline.md](references/evidence-discipline.md) 审核措辞与证据等级。
 6. 依据 [source-tiering.md](references/source-tiering.md) 决定优先搜索哪些来源。
-7. 若是电商购物决策相关主题，再加载 `../agentic-commerce-research-profile-zh/references/domain-profile-agentic-commerce.md` 获取领域结构、benchmark 检查项与常见专题模板。
-8. 如果任务是 recurring research，优先把“监测”和“落库”拆成两个阶段，不直接让定时任务改主稿。
-9. 只有在章节与结论稳定后，才进入图示阶段。
-10. 若任务本质上是在分辨概念、框定边界或固定统一口径，优先走 `concept-boundary-analyzer-zh`，不要直接跳进长篇文献堆叠。
-11. 若任务本质上是把研究判断落成技术蓝图或路线图，优先在成稿后走 `role-review-panel-zh` 做多职责交叉收敛。
-12. 若任务本质上是维护 curated repo 页面，优先走 `awesome-repo-maintainer-zh`，不要把 repo README 当成熟主稿来更新。
-13. 若任务本质上是多轮 critical thinking，优先走 `critical-iteration-lab-zh`，不要只靠 `paper-critic-zh` 做单轮结论审校。
-14. 若任务本质上是统一长期定义、清理概念漂移、把 hypothesis 和成熟结论分开，优先走 `concept-registry-maintainer-zh`。
-15. 若任务本质上是深挖训练方式、样本流、prompt/template、stagewise training，优先走 `methodology-sample-flow-extractor-zh`，不要只用通用 paper notes 兜底。
+7. 如果任务是 recurring research，优先把“监测”和“落库”拆成两个阶段，不直接让定时任务改主稿。
+8. 只有在章节与结论稳定后，才进入图示阶段。
+9. 若任务本质上是在分辨概念、框定边界或固定统一口径，优先走 `concept-boundary-analyzer-zh`，不要直接跳进长篇文献堆叠。
+10. 若任务本质上是把研究判断落成技术蓝图或路线图，优先在成稿后走 `role-review-panel-zh` 做多职责交叉收敛。
+11. 若任务本质上是维护 curated repo 页面，优先走 `awesome-repo-maintainer-zh`，不要把 repo README 当成熟主稿来更新。
+12. 若任务本质上是多轮 critical thinking，优先走 `critical-iteration-lab-zh`，不要只靠 `paper-critic-zh` 做单轮结论审校。
+13. 若任务本质上是统一长期定义、清理概念漂移、把 hypothesis 和成熟结论分开，优先走 `concept-registry-maintainer-zh`。
+14. 若任务本质上是深挖训练方式、样本流、prompt/template、stagewise training，优先走 `methodology-sample-flow-extractor-zh`，不要只用通用 paper notes 兜底。
 
 ## 调度守则
 - 能通过已有上下文判断的，不先问用户。

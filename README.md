@@ -168,15 +168,6 @@ English summary: A Chinese-first research skill pack for Hermes Agent, designed 
 - 补齐条目、来源、日期和一句话说明
 - 帮助把研究成果同步到 repo 资源页
 
-## 领域特化说明
-
-`agentic-commerce-research-profile-zh` 更适合作为一个垂直领域 research profile 示例，而不是一个通用拆包。
-
-也就是说：
-- 它可以作为电商 / shopping / agentic commerce 主题的附加模板使用
-- 但当前不把它单独视为一个通用 pack
-- 后续如果积累出更多 profile，再考虑单独形成 `Domain Profiles` 体系
-
 ## 推荐安装组合
 
 ### 只想先跑通主链
@@ -202,7 +193,6 @@ English summary: A Chinese-first research skill pack for Hermes Agent, designed 
 安装：
 - Core Pack
 - 如需要资源页维护，再加 Catalog & Repo Maintenance
-- 如需要领域模板，再额外参考 `agentic-commerce-research-profile-zh`
 
 ## 核心技能对照表
 
@@ -461,7 +451,7 @@ skills/
 - Core Pack
 - Monitoring Pack
 - Diagram / Concept / Methodology Extensions
-- Domain Profiles
+- Catalog / Repo Maintenance
 
 ## 当前限制
 
