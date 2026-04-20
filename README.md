@@ -189,10 +189,14 @@ English summary: A Chinese-first research skill pack for Hermes Agent, designed 
 - Core Pack
 - Methodology & Diagram Pack
 
-### 做电商 / shopping / agentic commerce 主题
+### 想维护资源页 / awesome 列表 / curated repo
 安装：
-- Core Pack
-- 如需要资源页维护，再加 Catalog & Repo Maintenance
+- Core Pack（可选）
+- Catalog & Repo Maintenance
+
+说明：
+- 如果你只是维护资源页、awesome 列表或 repo README，不一定需要完整主链。
+- 如果你既要做研究分析，又要把结果同步到资源页，再把 Core Pack 和 Catalog & Repo Maintenance 一起装上。
 
 ## 核心技能对照表
 
