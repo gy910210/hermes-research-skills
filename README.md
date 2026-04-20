@@ -41,34 +41,158 @@ English summary: A Chinese-first research skill pack for Hermes Agent, designed 
 
 这一版以中文 research workflow 为主，不追求大而全，先把主链路做顺。
 
-## 包含的 skills
+## Logical Packages
 
-### 1) 工作流主链
-- `research-orchestrator-zh` — 研究总编排入口，负责判断任务类型与调用链
-- `brief-ingester-zh` — 读取已有 brief、旧稿、笔记，抽取上下文
-- `literature-scout-zh` — 扩展检索、聚类证据、生成 evidence map
-- `paper-reader-zh` — 对高价值论文/官方页面做结构化精读
-- `paper-critic-zh` — 证据审校，区分直接证据、邻近证据、综合判断
-- `research-synthesizer-zh` — 把素材组织成综述/专题稿/方向比较稿
-- `report-maintainer-zh` — 维护版本化文稿与索引
-- `knowledge-base-updater-zh` — 将新证据稳妥并回既有知识库
-- `scheduled-research-monitor-zh` — 周期性监测新证据、产出增量摘要
+这一版仓库还没有真正拆成多个独立 repo，但已经可以按“逻辑拆包”来理解与安装。
 
-### 2) 分析与增强模块
-- `concept-boundary-analyzer-zh` — 概念边界辨析
-- `concept-registry-maintainer-zh` — 长期术语与概念口径维护
-- `critical-iteration-lab-zh` — 多轮批判性迭代分析
-- `methodology-sample-flow-extractor-zh` — 方法、样本流、训练阶段深挖
-- `role-review-panel-zh` — 多职责评审面板
-- `doc-diagram-orchestrator-zh` — 从文稿中识别适合补图的位置并生成绘图规格
+也就是说：
+- 现在仍然是一个仓库
+- 但可以按不同使用场景，只安装其中一部分 skills
+- 后续如果社区和版本稳定，再决定是否物理拆成多个包或多个仓库
 
-### 3) 兼容与补充模块
+### 1) Core Pack
+
+定位：最小可用研究主链。
+
+适合谁：
+- 想从研究问题一路走到成稿的人
+- 想先装一套“够用且稳定”的中文 research skills 的用户
+- 不想一开始就装太多扩展模块的人
+
+推荐安装：
+- `research-orchestrator-zh`
+- `brief-ingester-zh`
+- `literature-scout-zh`
+- `paper-reader-zh`
+- `paper-critic-zh`
+- `research-synthesizer-zh`
+- `report-maintainer-zh`
+
+可选补强：
+- `knowledge-base-updater-zh`
+
+作用：
+- 读取已有材料
+- 扩展证据
+- 精读高价值来源
+- 做证据审校
+- 综合成稿
+- 维护版本化文稿
+
+### 2) Monitoring Pack
+
+定位：持续跟踪与增量更新。
+
+适合谁：
+- 想长期跟踪一个研究方向的人
+- 想把 recurring research 做成周期流程的人
+- 已经有主稿/知识库，想做增量维护的人
+
+推荐安装：
+- `scheduled-research-monitor-zh`
+- `knowledge-base-updater-zh`
+- `report-maintainer-zh`
+
+建议搭配：
+- `brief-ingester-zh`
+- `literature-scout-zh`
+
+作用：
+- 监测新论文 / 新 benchmark / 新官方信号
+- 产出 monitoring digest
+- 判断哪些更新值得并回主稿或知识库
+
+### 3) Concept & Review Pack
+
+定位：强化分析、分歧辨析与长期口径维护。
+
+适合谁：
+- 要做概念边界辨析的人
+- 要长期维护术语口径的人
+- 要做多轮批判性分析或多角色评审的人
+
+推荐安装：
+- `concept-boundary-analyzer-zh`
+- `concept-registry-maintainer-zh`
+- `critical-iteration-lab-zh`
+- `role-review-panel-zh`
+
+建议搭配：
+- `research-synthesizer-zh`
+- `report-maintainer-zh`
+
+作用：
+- 拆概念
+- 固定口径
+- 保留分歧
+- 让研究判断更稳，而不是只堆引用
+
+### 4) Methodology & Diagram Pack
+
+定位：深挖方法细节，以及把内容转成更易传播的结构化表达。
+
+适合谁：
+- 想深挖训练方式、样本流、prompt/template 的人
+- 想给综述或技术文稿补结构图/流程图的人
+- 想做更强表达层输出的人
+
+推荐安装：
+- `methodology-sample-flow-extractor-zh`
+- `doc-diagram-orchestrator-zh`
 - `paper-summarizer-zh`
+
+兼容补充：
 - `paper-explorer-zh`
 - `paper-explorer-brief-zh`
 - `paper-collab-coordinator-zh`
-- `awesome-repo-maintainer-zh`
+
+作用：
+- 深挖方法与样本流
+- 输出结构化方法卡
+- 为文稿生成 diagram specs 和插图计划
+
+### 5) Domain Profile Pack
+
+定位：领域模板与场景特化。
+
+适合谁：
+- 在某个垂直领域反复做研究的人
+- 想把主链 workflow 套到具体行业主题上的人
+
+当前包含：
 - `agentic-commerce-research-profile-zh`
+- `awesome-repo-maintainer-zh`
+
+作用：
+- 提供领域 taxonomy
+- 提供 benchmark 检查项
+- 提供 repo / catalog 类维护辅助
+
+## 推荐安装组合
+
+### 只想先跑通主链
+安装：
+- Core Pack
+
+### 想做长期跟踪
+安装：
+- Core Pack
+- Monitoring Pack
+
+### 想做概念辨析 / 路线图 / 批判分析
+安装：
+- Core Pack
+- Concept & Review Pack
+
+### 想深挖 methodology 或给文稿补图
+安装：
+- Core Pack
+- Methodology & Diagram Pack
+
+### 做电商 / shopping / agentic commerce 主题
+安装：
+- Core Pack
+- Domain Profile Pack
 
 ## 核心技能对照表
 
