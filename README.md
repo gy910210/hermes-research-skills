@@ -151,22 +151,31 @@ English summary: A Chinese-first research skill pack for Hermes Agent, designed 
 - 输出结构化方法卡
 - 为文稿生成 diagram specs 和插图计划
 
-### 5) Domain Profile Pack
+### 5) Catalog & Repo Maintenance
 
-定位：领域模板与场景特化。
+定位：资源页、catalog、awesome 列表与 repo 说明的维护辅助。
 
 适合谁：
-- 在某个垂直领域反复做研究的人
-- 想把主链 workflow 套到具体行业主题上的人
+- 想维护 curated repo / awesome 列表的人
+- 想把研究结果同步到资源页或 README 的人
+- 想做 catalog diff、条目补全、资源编排的人
 
 当前包含：
-- `agentic-commerce-research-profile-zh`
 - `awesome-repo-maintainer-zh`
 
 作用：
-- 提供领域 taxonomy
-- 提供 benchmark 检查项
-- 提供 repo / catalog 类维护辅助
+- 维护 awesome / catalog 类页面
+- 补齐条目、来源、日期和一句话说明
+- 帮助把研究成果同步到 repo 资源页
+
+## 领域特化说明
+
+`agentic-commerce-research-profile-zh` 更适合作为一个垂直领域 research profile 示例，而不是一个通用拆包。
+
+也就是说：
+- 它可以作为电商 / shopping / agentic commerce 主题的附加模板使用
+- 但当前不把它单独视为一个通用 pack
+- 后续如果积累出更多 profile，再考虑单独形成 `Domain Profiles` 体系
 
 ## 推荐安装组合
 
@@ -192,7 +201,8 @@ English summary: A Chinese-first research skill pack for Hermes Agent, designed 
 ### 做电商 / shopping / agentic commerce 主题
 安装：
 - Core Pack
-- Domain Profile Pack
+- 如需要资源页维护，再加 Catalog & Repo Maintenance
+- 如需要领域模板，再额外参考 `agentic-commerce-research-profile-zh`
 
 ## 核心技能对照表
 
