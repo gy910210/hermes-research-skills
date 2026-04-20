@@ -58,7 +58,7 @@ description: "Awesome/README 维护器：专门维护 awesome-*.md、repo README
    - 一句话说明
    - 推荐章节
 5. 对无法稳定核实的条目，放入 `unverifiable_candidates`，不要硬写入正式 repo 页面。
-6. 如果主题属于电商搜推/生成式搜推，优先和中文增强版资源页、深度分析稿做 paired sync，而不是只对单一文件更新。
+6. 如果主题已经有资源页、增强版目录页或配套深度分析稿，优先做 paired sync，而不是只对单一文件更新。
 
 ## 守护
 - repo 页面优先短、准、可维护，不把长分析直接灌进去。
