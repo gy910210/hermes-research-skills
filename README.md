@@ -422,6 +422,107 @@ cp -R skills/paper-reader-zh ~/.hermes/skills/
 
 这也是这套 skills 和“普通 agent 搜完就总结”最大的区别。
 
+## 真实示例仓库
+
+如果你想看这套 skills 产出的研究仓库“长什么样”，可以直接参考这个公开示例：
+
+- 示例仓库：`https://github.com/gy910210/ai_finance_web3_research`
+
+这个示例很适合拿来理解：
+- 一套中文 research workflow 跑完后，最终 repo 的目录应该怎么组织
+- 哪些内容应该面向外部读者，哪些内容应该保留在研究工件层
+- `README / INDEX / 主稿 / 专题稿 / .meta 工件` 之间如何分层
+
+### 这个示例仓库里有什么
+
+它不是代码仓库，而是一个持续迭代的研究文档仓库，内容大致分成三层：
+
+1. 对外分享层
+- `onepager-agentic-finance-ai-web3-v0.2.md`
+- `executive-summary-agentic-finance-v0.2.md`
+
+2. 主稿 / 专题稿层
+- `agentic-finance-research-v0.2.md`
+- `report_ai_web3_directions_v0.1.md`
+- `ai-trader-deep-dive.md`
+
+3. 研究工件层
+- `INDEX.md`
+- `.meta/INDEX.md`
+- `.meta/` 下的 `context_brief`、`evidence_map`、`paper_notes`、`reading_queue`、`synthesis_packet`
+
+### 它和这套 skills 的对应关系
+
+你可以把这个示例仓库理解成下面这条链路的落地结果：
+
+1. `research-orchestrator-zh`
+- 决定主链怎么跑
+- 明确需要哪些研究工件
+
+2. `brief-ingester-zh`
+- 读取已有文稿、旧笔记、历史判断
+- 产出 `context_brief`
+
+3. `literature-scout-zh`
+- 扩展近一段时间的新证据
+- 产出 `evidence_map` 和 `priority_reading_queue`
+
+4. `paper-reader-zh`
+- 精读高价值来源
+- 产出结构化 `paper_notes`
+
+5. `paper-critic-zh`
+- 区分直接证据、综合判断、待验证假设
+- 产出 `evidence_audit`
+
+6. `research-synthesizer-zh`
+- 把证据组织成可读的主稿/专题稿增量
+- 产出 `synthesis_packet` 和章节草稿
+
+7. `report-maintainer-zh`
+- 把新增内容并回主稿、专题稿、索引页
+- 形成最终对外可读的 repo 结构
+
+### 你应该重点观察什么
+
+看这个示例仓库时，建议重点注意 4 件事：
+
+1. `README.md` 不是泛介绍，而是读者入口
+- 说明这个研究仓库讨论什么
+- 说明有哪些层次的内容
+- 给出推荐阅读顺序
+
+2. `INDEX.md` 和 `.meta/INDEX.md` 把“成文层”和“工件层”分开
+- 主稿、专题稿、摘要稿面向读者
+- `.meta/` 面向研究过程追溯和证据维护
+
+3. `.meta/` 不是杂物堆，而是结构化工件目录
+- `context_brief`
+- `evidence_map`
+- `paper_notes`
+- `reading_queue`
+- `synthesis_packet`
+- `evidence_audit`
+
+4. 主稿不是聊天总结，而是版本化研究文稿
+- 有主稿
+- 有专题稿
+- 有摘要稿
+- 有后续持续更新的空间
+
+### 这个示例为什么重要
+
+很多人知道要“做研究”，但不知道研究 repo 最后应该长成什么样。
+
+这个示例仓库提供了一个很具体的参考：
+- 不只是给你 prompt
+- 还给你一个研究仓库成品的形态样板
+
+所以如果你想用这套 Hermes research skills 搭自己的长期研究仓库，最直接的做法是：
+- 一边看本仓库的 skill 说明
+- 一边对照 `ai_finance_web3_research` 这个示例仓库
+- 观察从 research workflow 到 repo 结构的映射关系
+
 ## 仓库结构
 
 ```text
