@@ -433,6 +433,28 @@ cp -R skills/paper-reader-zh ~/.hermes/skills/
 - 哪些内容应该面向外部读者，哪些内容应该保留在研究工件层
 - `README / INDEX / 主稿 / 专题稿 / .meta 工件` 之间如何分层
 
+### 快速示例
+
+如果你只想先用 30 秒理解“这套 skills 最后会产出什么”，可以直接把它看成这样一条链：
+
+`research-orchestrator-zh`
+→ `brief-ingester-zh`
+→ `literature-scout-zh`
+→ `paper-reader-zh`
+→ `paper-critic-zh`
+→ `research-synthesizer-zh`
+→ `report-maintainer-zh`
+
+在 `ai_finance_web3_research` 这个示例仓库里，这条链最后会落成：
+- `README.md`：给外部读者的入口
+- `INDEX.md`：主稿 / 专题稿 / 摘要稿导航
+- `agentic-finance-research-v0.2.md`：主稿
+- `report_ai_web3_directions_v0.1.md`：专题稿
+- `.meta/`：`context_brief / evidence_map / paper_notes / synthesis_packet` 等研究工件
+
+一句话理解：
+这套 skills 不是只帮你“搜完然后总结”，而是能把研究过程沉淀成一个长期可维护的研究仓库。
+
 ### 这个示例仓库里有什么
 
 它不是代码仓库，而是一个持续迭代的研究文档仓库，内容大致分成三层：
