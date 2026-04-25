@@ -455,6 +455,105 @@ cp -R skills/paper-reader-zh ~/.hermes/skills/
 一句话理解：
 这套 skills 不是只帮你“搜完然后总结”，而是能把研究过程沉淀成一个长期可维护的研究仓库。
 
+### 如何从 0 到 1 复刻这个示例仓库
+
+如果你想自己做一个类似 `ai_finance_web3_research` 的研究仓库，可以直接照下面这条最小流程走：
+
+#### Step 1. 先定主题和仓库边界
+先回答 3 个问题：
+- 你的研究主线是什么
+- 你是写给谁看的
+- 这个仓库是“长期主稿 + 专题稿 + 工件层”，还是只做一次性专题
+
+目标不是一开始就写很多，而是先确定这个 repo 是不是一个长期维护的研究库。
+
+#### Step 2. 用 `research-orchestrator-zh` 起盘
+让它先决定主链怎么跑。
+
+你应该得到：
+- 研究问题拆分
+- 推荐调用链
+- 需要生成的工件列表
+
+#### Step 3. 用 `brief-ingester-zh` 先吃掉已有材料
+输入：
+- 旧稿
+- 笔记
+- PDF
+- 之前的判断
+
+输出：
+- `context_brief.md`
+
+这一步的作用是防止后面盲搜和重复劳动。
+
+#### Step 4. 用 `literature-scout-zh` 扩证据
+输出通常包括：
+- `evidence_map.md`
+- `priority_reading_queue.md`
+
+这一步会把新来源聚类、去重、初步分层，而不是简单堆链接。
+
+#### Step 5. 用 `paper-reader-zh` + `paper-critic-zh` 做精读和审校
+输出通常包括：
+- `paper_notes_*.md`
+- `evidence_audit.md`
+
+到这里，你已经不再是“搜资料”，而是在积累结构化研究工件。
+
+#### Step 6. 用 `research-synthesizer-zh` 出主稿 / 专题稿草案
+输出通常包括：
+- `synthesis_packet.md`
+- 主稿章节草稿
+- 专题稿草稿
+
+#### Step 7. 用 `report-maintainer-zh` 把 repo 变成可读版本
+最后把东西组织成读者能用的仓库结构：
+- `README.md`：告诉别人这是什么、怎么读
+- `INDEX.md`：导航主稿 / 专题稿 / 摘要稿
+- 主稿：长期维护
+- 专题稿：按子问题分拆
+- `.meta/`：保留研究过程工件
+
+#### Step 8. 再决定要不要加 monitoring
+如果这个方向值得长期追，就继续加：
+- `scheduled-research-monitor-zh`
+- `knowledge-base-updater-zh`
+
+这样你的 repo 就不只是“做完一版”，而是进入持续更新状态。
+
+### 最小目录模板
+
+如果你想快速搭一个类似示例仓库的结构，可以先用这个最小模板：
+
+```text
+.
+├── README.md
+├── INDEX.md
+├── main-report-v0.1.md
+├── topic-deep-dive-v0.1.md
+└── .meta/
+    ├── INDEX.md
+    ├── context_brief.md
+    ├── evidence_map.md
+    ├── priority_reading_queue.md
+    ├── paper_notes_001.md
+    ├── evidence_audit.md
+    └── synthesis_packet.md
+```
+
+这就已经足够像 `ai_finance_web3_research` 的骨架了。
+
+### 一个很实用的判断标准
+
+如果你跑完这套流程后，仓库里只有“一个总结文档”，那说明你还没有真的把 research workflow 沉淀下来。
+
+如果你最后得到的是：
+- 面向外部的 README / INDEX / 主稿 / 专题稿
+- 面向内部的 `.meta/` 工件层
+
+那你就已经真正复刻出了这套 skills 想要的研究仓库形态。
+
 ### 这个示例仓库里有什么
 
 它不是代码仓库，而是一个持续迭代的研究文档仓库，内容大致分成三层：
