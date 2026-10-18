@@ -248,8 +248,14 @@ English summary: A Chinese-first research skill pack for Hermes Agent, designed 
 5. 文稿默认要可维护，而不是一次性聊天产物
 
 ## 安装
+### 方式 1：Hermes 自己安装（推荐）
 
-### 方式 1：作为外部 tap 源接入
+直接在对话框和 Hermes Agent 说：
+```bash
+帮我装一下 https://github.com/gy910210/hermes-research-skills 的 skills
+```
+
+### 方式 2：作为外部 tap 源接入
 
 ```bash
 hermes skills tap add gy910210/hermes-research-skills
@@ -257,7 +263,7 @@ hermes skills tap add gy910210/hermes-research-skills
 
 说明：不同 Hermes 版本对外部 tap 的安装体验可能略有差异。若已加 tap，可继续通过 Hermes 的 skills 子命令浏览、检查和安装。
 
-### 方式 2：手动复制（最稳）
+### 方式 2：手动复制
 
 把本仓库 `skills/` 下面需要的目录复制到你的 Hermes skills 目录。
 
