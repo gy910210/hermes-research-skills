@@ -83,11 +83,7 @@ terminal(command="python skills/report-html-publisher-zh/scripts/publish_report.
 
 ## 验证 / 停止条件
 
-仓库测试通过 `terminal` 执行：
-
-```python
-terminal(command="python -m unittest discover -s tests/skills -p test_report_html_publisher.py -v")
-```
+开发测试与演示文件仅保留本地，不作为安装依赖。使用者应对自己的输入稿和实际生成页面执行以下验收，而不是依赖未随 skill 分发的测试目录。
 
 实际任务必须检查：源稿未变；正文/表格/代码/引用未丢失；选中的链接与锚点有效；省略内容在manifest可解释；桌面/手机可读；目录/打印可用。只在这些完成后报告本地HTML交付。公网交付还需要真实URL回读通过。
 

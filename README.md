@@ -357,15 +357,9 @@ python skills/report-html-publisher-zh/scripts/publish_report.py research/report
 
 打开 `research/site-v1/index.html`。需要附页与附件时，经确认范围后增加 `--include-linked --copy-attachments`；更新本工具管理的输出才使用 `--overwrite`。默认不复制原 Markdown，不递归公开内部笔记，不联网加载资源、不部署网站。
 
-验证脚本：
-
-```bash
-python -m unittest discover -s tests/skills -p test_report_html_publisher.py -v
-```
+生成后检查 `manifest.json` 的导出范围，并在浏览器中验证正文、表格、引用、页内/跨页链接和移动端布局。开发测试及演示文件仅保留本地，不随仓库分发。
 
 生成能力自包含于这个 skill，不要求另装设计 skill。TeX/Mermaid 保留原文本/代码，暂不自动渲染。公网发布前需确认平台、账号、许可与公开范围，部署后还要读取真实线上 URL；详见[发布边界](skills/report-html-publisher-zh/references/publishing-boundary.md)。
-
-可直接运行的示例见 [`examples/html-report/`](examples/html-report/README.md)，包含明确标注虚构数据的主稿与附页，用于验证目录、表格、引用、代码和跨页锚点。
 
 ## 端到端使用示例
 
