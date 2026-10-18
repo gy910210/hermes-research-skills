@@ -92,3 +92,18 @@
 - `catalog_diff_findings[]`
 - `normalization_fixes[]`
 - `paired_doc_drift[]`
+
+## `html_publication_packet`
+- `source_report`
+- `entry_html`
+- `output_dir`
+- `included_pages[]`
+- `included_attachments[]`
+- `omitted_links[]`
+- `source_unchanged`
+- `checks`：正文/表格/代码/引用、链接与锚点、桌面/手机、控制台、打印；注明未执行项。
+- `deployment_status`：`local_only` 或 `published_verified`
+- `public_url`：仅在线上回读验证成功时填写。
+- `deployment_checks`
+
+详细边界见 [HTML输出契约](../../report-html-publisher-zh/references/output-contract.md)。本地生成不自动授权公网部署或公开内部工件。

@@ -33,6 +33,7 @@ description: "研究文稿维护器：为版本化 Markdown 报告创建新文�
 - `maintenance_packet`
 - 新文件路径建议
 - 一致性检查结果
+- 若用户要求网页交付：维护完 Markdown 后交给 `report-html-publisher-zh`，保留源稿并单独记录网页验证结果。
 
 ## 工作流
 1. 优先运行 `scripts/next_report_name.py` 生成新文件名。
@@ -52,6 +53,7 @@ description: "研究文稿维护器：为版本化 Markdown 报告创建新文�
 8. 如果这轮更新涉及概念口径变化，额外执行：
    - `concept_consistency_scan`
    - 检查 preferred term / deprecated term / maturity tag 是否在主稿、专题稿、资源页间一致。
+9. 用户要求 HTML 阅读版时，在上述检查后调用 `report-html-publisher-zh`，不手改生成页形成第二份事实源；默认只生成本地页面，附页/附件及公网范围另行确认。
 
 ## 守护
 - 文档维护默认是保守变更；不大面积重写用户未要求改动的老稿。
