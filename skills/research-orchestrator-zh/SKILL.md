@@ -24,6 +24,7 @@ description: "研究总编排入口：为新方向启动、已有报告增量扩
 - 用户要对一个方向做三轮以上批判性迭代。
 - 用户要把新概念并回多份文档，统一长期口径。
 - 用户要专门抽取 methodology、样本流、prompt/template 和 loss 设计。
+- 用户已有研究稿，希望生成保留证据、适合浏览器阅读的 HTML 页面。
 
 ## 默认原则
 - 默认中文输出。
@@ -36,7 +37,7 @@ description: "研究总编排入口：为新方向启动、已有报告增量扩
 - `research_goal`: 当前轮研究目标
 - `existing_files[]`: 已有报告、笔记、PDF、Markdown、表格或索引（可为空）
 - `time_window`: 年份或时间范围（可选）
-- `deliverable_type`: `"增量稿"|"专题稿"|"方向比较稿"|"双视角稿"|"成熟主稿"|"图示增强"|"awesome_page"|"institution_roadmap"|"critical_iteration_report"|"route_family_comparison"`
+- `deliverable_type`: `"增量稿"|"专题稿"|"方向比较稿"|"双视角稿"|"成熟主稿"|"图示增强"|"awesome_page"|"institution_roadmap"|"critical_iteration_report"|"route_family_comparison"|"html_report"`
 
 ## 输出
 - `research_agenda`
@@ -67,6 +68,10 @@ description: "研究总编排入口：为新方向启动、已有报告增量扩
    - 调用链：`brief-ingester-zh -> literature-scout-zh -> paper-reader-zh -> paper-critic-zh -> critical-iteration-lab-zh -> research-synthesizer-zh -> report-maintainer-zh`
 11. `critical-iteration-report`
    - 调用链：`brief-ingester-zh -> literature-scout-zh -> paper-reader-zh -> paper-critic-zh -> critical-iteration-lab-zh -> research-synthesizer-zh`
+12. `研究稿 HTML 阅读版`
+   - 已有定稿：`report-html-publisher-zh`；仅转换格式，不重复检索或改写结论。
+   - 新研究同时要求网页：在既有研究链完成审校、成稿与维护后接 `report-html-publisher-zh`。
+   - 默认交付本地页面；附页/附件范围需显式选择，公网部署另外确认并回读验证。
 
 ## 工作流
 1. 先读取已有材料，明确项目现状，而不是直接搜索。
@@ -83,6 +88,7 @@ description: "研究总编排入口：为新方向启动、已有报告增量扩
 12. 若任务本质上是多轮 critical thinking，优先走 `critical-iteration-lab-zh`，不要只靠 `paper-critic-zh` 做单轮结论审校。
 13. 若任务本质上是统一长期定义、清理概念漂移、把 hypothesis 和成熟结论分开，优先走 `concept-registry-maintainer-zh`。
 14. 若任务本质上是深挖训练方式、样本流、prompt/template、stagewise training，优先走 `methodology-sample-flow-extractor-zh`，不要只用通用 paper notes 兜底。
+15. 用户要求 HTML/网页交付时，在研究文本稳定后调用 `report-html-publisher-zh`；保持 Markdown 为事实源，交付 `html_publication_packet`，不得把本地生成称为已经上线。
 
 ## 调度守则
 - 能通过已有上下文判断的，不先问用户。
@@ -125,8 +131,11 @@ description: "研究总编排入口：为新方向启动、已有报告增量扩
 - 第 4 步：必要时调用 `paper-critic-zh` 做证据审校
 - 第 5 步：调用 `research-synthesizer-zh` 产出结构化文稿
 - 第 6 步：若用户要落库/并回主稿，再调用 `report-maintainer-zh` 或 `knowledge-base-updater-zh`
+- 可选第 7 步：若用户要网页阅读版，调用 `report-html-publisher-zh` 并验证实际生成页面。
 
 ## 停止条件
+
+若用户明确要求 HTML，必须生成真实页面并完成发布范围、正文保真、链接与浏览器检查；不能仅靠选定流程或写出下一步建议结束。无浏览器时明确记录未执行项。公网发布还需要线上 URL 回读验证，或明确告知授权/平台阻塞。
 
 满足以下条件之一才能结束当前轮：
 

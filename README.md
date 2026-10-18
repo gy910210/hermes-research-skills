@@ -18,6 +18,7 @@ English summary: A Chinese-first research skill pack for Hermes Agent, designed 
 - 概念边界辨析与长期口径维护
 - 方法、样本流、prompt/template 深挖
 - 周期性研究监测与增量更新
+- 已有研究报告的 HTML 阅读版交付
 
 ## 为什么做这套 skills
 
@@ -170,6 +171,13 @@ English summary: A Chinese-first research skill pack for Hermes Agent, designed 
 
 ## 推荐安装组合
 
+### 可选扩展：HTML Publication
+
+- Skill：[`report-html-publisher-zh`](skills/report-html-publisher-zh/SKILL.md)
+- 输入：稳定的 Markdown 研究稿；输出：响应式 HTML、目录、可点击引用、打印样式与构建清单。
+- 适合单独使用，也可接在 `report-maintainer-zh` 后面；不改写研究结论。
+- 默认只生成本地单篇页面；附页与附件必须显式选择，公网部署另外确认和验证。
+
 ### 只想先跑通主链
 安装：
 - Core Pack
@@ -217,6 +225,7 @@ English summary: A Chinese-first research skill pack for Hermes Agent, designed 
 | `methodology-sample-flow-extractor-zh` | 方法/样本流深挖 | 论文、附录、官方页面 | 方法卡、样本流对照表 | 可选 |
 | `role-review-panel-zh` | 多职责评审 | 技术方案稿、路线图、研究判断 | 分歧点、取舍、修订建议 | 可选 |
 | `doc-diagram-orchestrator-zh` | 图示编排 | Markdown 文稿、章节内容 | diagram specs、插图计划 | 可选 |
+| `report-html-publisher-zh` | HTML 阅读版 | 定稿 Markdown、输出目录、导出范围 | `index.html`、可选附页/附件、manifest、`html_publication_packet` | 网页交付时建议 |
 
 ## 推荐调用链
 
@@ -233,6 +242,8 @@ English summary: A Chinese-first research skill pack for Hermes Agent, designed 
 可以把它理解为：
 
 `已有材料 -> 扩展检索 -> 精读 -> 审校 -> 综合 -> 维护 -> 监测`
+
+若用户要求网页，在成稿和维护后追加 `report-html-publisher-zh`；已有定稿只需转换，不必重跑研究链。
 
 ## 这套 skills 和普通搜索/总结有什么不同
 
@@ -330,6 +341,25 @@ cp -R skills/paper-reader-zh ~/.hermes/skills/
 
 建议入口：
 - `research-synthesizer-zh`
+
+### 场景 5：已有研究稿，想生成 HTML 页面
+
+对 Hermes 说：
+
+> 使用 report-html-publisher-zh，把 research/report.md 转成 HTML 阅读版，输出到 research/site-v1。先只导出主报告，不要上传公网。
+
+也可在仓库根目录运行脚本（Python 3.10+）：
+
+```bash
+python -m pip install -r skills/report-html-publisher-zh/requirements.txt
+python skills/report-html-publisher-zh/scripts/publish_report.py research/report.md --output research/site-v1
+```
+
+打开 `research/site-v1/index.html`。需要附页与附件时，经确认范围后增加 `--include-linked --copy-attachments`；更新本工具管理的输出才使用 `--overwrite`。默认不复制原 Markdown，不递归公开内部笔记，不联网加载资源、不部署网站。
+
+生成后检查 `manifest.json` 的导出范围，并在浏览器中验证正文、表格、引用、页内/跨页链接和移动端布局。开发测试及演示文件仅保留本地，不随仓库分发。
+
+生成能力自包含于这个 skill，不要求另装设计 skill。TeX/Mermaid 保留原文本/代码，暂不自动渲染。公网发布前需确认平台、账号、许可与公开范围，部署后还要读取真实线上 URL；详见[发布边界](skills/report-html-publisher-zh/references/publishing-boundary.md)。
 
 ## 端到端使用示例
 
@@ -669,6 +699,7 @@ skills/
   methodology-sample-flow-extractor-zh/
   role-review-panel-zh/
   doc-diagram-orchestrator-zh/
+  report-html-publisher-zh/
   ...
 ```
 

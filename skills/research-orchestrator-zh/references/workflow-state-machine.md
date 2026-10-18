@@ -23,6 +23,9 @@
 - `diagram`
   - 目标：在结构稳定后补图，不改变原始证据结论。
   - 退出条件：图示增强稿或图示插入计划。
+- `html_publish`
+  - 目标：把稳定 Markdown 保真转换成浏览器阅读页，按显式范围导出附页/附件。
+  - 退出条件：真实 HTML 入口、manifest 与 `html_publication_packet`；完成保真、链接和浏览器检查（无法执行则明确记录）。默认 local_only，不能声称公网成功。
 
 ## 场景映射
 - 新方向启动：`bootstrap -> scout -> read -> audit -> synthesize -> maintain`
@@ -30,12 +33,15 @@
 - 专题深挖：`bootstrap -> scout -> read -> audit -> synthesize`
 - 主稿成熟化合并：`synthesize -> maintain`
 - 图示增强：`diagram`
+- 已有稿件转网页：`html_publish`；不因换格式重新检索或重新写稿。
+- 新研究并交付网页：在原研究链的 `maintain` 后追加 `html_publish`。
 
 ## 默认出口条件
 - 没有 `context_brief`，不要跳过 `bootstrap`。
 - 没有证据地图，不进入主稿级综合。
 - 没有审校，不把 exploratory 观点写成成熟结论。
 - 没有维护步骤，不视为完整交付。
+- 用户要求网页时，没有实际 HTML 与验证记录，不视为完成；公网交付还需真实 URL 回读或明确授权阻塞。
 
 ## 阻塞处理
 - 如果新证据不足：转为 `open gap` 列表，而不是填充想象性内容。
